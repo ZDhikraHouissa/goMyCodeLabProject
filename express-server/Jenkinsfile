@@ -4,7 +4,7 @@ node {
 
     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
        /* def dockerfile = 'express-server/Dockerfile'*/
-        def customImage = docker.build("dhikrahouissa/node-web-app","-f /express-server")
+        def customImage = docker.build("dhikrahouissa/node-web-app")
 
         /* Push the container to the custom Registry */
         customImage.push()
