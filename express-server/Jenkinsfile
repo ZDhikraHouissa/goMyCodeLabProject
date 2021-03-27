@@ -3,7 +3,7 @@ node {
     checkout scm
 
     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-        def dockerfile = 'Dockerfile'
+        def dockerfile = 'express-server/Dockerfile'
         def customImage = docker.build("dhikrahouissa/node-web-app","-f ${dockerfile}")
 
         /* Push the container to the custom Registry */
