@@ -3,8 +3,8 @@ node {
     checkout scm
 
     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-
-        def customImage = docker.build("dhikrahouissa/node-web-app")
+        def dockerfile = 'Dockerfile'
+        def customImage = docker.build("dhikrahouissa/node-web-app","-f ${dockerfile}")
 
         /* Push the container to the custom Registry */
         customImage.push()
